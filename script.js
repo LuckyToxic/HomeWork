@@ -236,3 +236,136 @@ alert(`Ты набрал ${score} очков`)
 
 
 
+// ДОМАШНЕЕ ЗАДАНИЕ №3
+
+let num1 = +prompt('Введите начало диапазона:')
+
+let num2 = +prompt('Введите конец диапазона:')
+
+let sum = 0
+
+while(num1 <= num2){
+    sum += num1
+    num1++
+}
+
+alert(`Сумма чисел заданого диапазона равна - ${sum}`)
+
+
+
+let num1 = +prompt('Введите первое число:')
+
+let num2 = +prompt('Введите второе число:')
+
+let maxDivisor = 1;
+
+for( let i = 1; i <= num1 && i <= num2;i++ ){
+    if(num1 % i == 0 && num2 % i == 0){
+        maxDivisor = i
+    }
+}
+
+alert(`У чисел ${num1} и ${num2} наибольший общий делитель ${maxDivisor}`)
+
+
+
+
+let num = +prompt('Введите число:')
+
+let divisors = ''
+
+for( let i = 1; i <= num; i++){
+    if(num % i == 0){
+        divisors += i + ','
+    }
+}
+
+alert(`У числа ${num} есть такие делители: ${divisors}`)
+
+
+
+
+
+let num = +prompt('Введите число:')
+
+let counter = 0
+
+while(num > 0){
+    num = Math.trunc(num / 10)
+    counter++
+}
+
+alert(`В вашем числе (в его целой части) находиться ${counter} цифр`)
+
+
+
+
+let num = 0
+
+let positiveNum = 0
+
+let negativeNum = 0
+
+let nullNum = 0
+
+let evenNum = 0
+
+let oddNum = 0
+
+for(let i = 0; i < 10;i++){
+    num = +prompt('Введите число:')
+
+    if(num > 0){
+        positiveNum += 1
+    }else if( num < 0){
+        negativeNum += 1
+    }else{
+        nullNum += 1
+    }
+    (num % 2 == 0) ? (evenNum += 1) : (oddNum += 1)
+}
+
+alert(`Из 10 введеных чисел ${positiveNum} положительных, ${negativeNum} отрицательных, ${nullNum} равны нулю, ${evenNum} четных и ${oddNum} нечетных чисел`)
+
+
+
+
+
+let num1 = 0
+
+let num2 = 0
+
+let sign = ''
+
+let result = true
+
+do{
+    let num1 = +prompt('Введите первое число:')
+
+    let num2 = +prompt('Введите второе число:')
+
+    let sign = prompt('Введите знак действия : * , / , + , - :')
+
+    switch(sign){
+        case '*' :
+            alert(`${num1} ${sign} ${num2} = ${num1 * num2}`)
+            break;
+        case '/' :  
+            alert(`${num1} ${sign} ${num2} = ${num1 / num2}`)
+            break;
+        case '+' :
+            alert(`${num1} ${sign} ${num2} = ${num1 + num2}`)
+            break;
+        case '-' :
+            alert(`${num1} ${sign} ${num2} = ${num1 - num2}`)
+            break;
+        default:
+            alert('Вы не ввели нужный знак!')
+            break; 
+}
+result = confirm('Хотите  продолжить?')
+}while(result == true)
+
+
+
+
